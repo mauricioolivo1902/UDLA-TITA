@@ -1,0 +1,977 @@
+/* css/style.css */
+
+:root {
+    /* Paleta de Colores solicitada */
+    --bg-ice-blue: #f4f7f9;
+    --card-white: #ffffff;
+    --accent-blue: #262f57;
+    --accent-blue-hover: #1b2240;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --border-light: #e5e7eb;
+    
+    /* Estados */
+    --success-mint: #d1fae5;
+    --success-text: #065f46;
+    --warning-yellow: #fef3c7;
+    --warning-text: #92400e;
+    --danger-red: #fee2e2;
+    --danger-text: #991b1b;
+
+    /* Estilos estructurales */
+    --border-radius-card: 12px;
+    --border-radius-btn: 8px;
+    --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body.bg-ice-blue {
+    background-color: var(--bg-ice-blue);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Componentes Login --- */
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-card {
+    background-color: var(--card-white);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-soft);
+    padding: 40px 30px;
+}
+
+.login-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.text-accent {
+    color: var(--accent-blue);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* --- Formularios --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-btn);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-blue);
+    background-color: var(--card-white);
+    box-shadow: 0 0 0 3px rgba(38, 47, 87, 0.1);
+}
+
+/* --- Botones --- */
+.btn-primary {
+    width: 100%;
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius-btn);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+/* --- Layout Dashboard --- */
+.dashboard-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: var(--bg-ice-blue);
+    /* Sobrescribimos la alineación centrada del login */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: var(--card-white);
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    box-shadow: 1px 0 15px rgba(0, 0, 0, 0.02);
+    z-index: 10;
+}
+
+.sidebar-brand {
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.badge-role {
+    display: inline-block;
+    background-color: var(--bg-ice-blue);
+    color: var(--accent-blue);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-btn);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-ice-blue);
+    color: var(--accent-blue);
+}
+
+.nav-item.active {
+    background-color: var(--accent-blue);
+    color: var(--card-white);
+}
+
+.text-danger {
+    color: var(--danger-text);
+}
+.text-danger:hover {
+    background-color: var(--danger-red);
+    color: var(--danger-text);
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    max-width: 1200px;
+}
+
+.topbar {
+    margin-bottom: 40px;
+}
+
+.greeting h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* --- Grid de Módulos (Tarjetas) --- */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.module-card {
+    background-color: var(--card-white);
+    border-radius: var(--border-radius-card);
+    padding: 24px;
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid transparent;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08);
+    border-color: var(--border-light);
+}
+
+.module-card h3 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.module-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* --- Círculos de Íconos Pastel --- */
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bg-blue-light { background-color: #e0e7ff; }
+.bg-yellow-light { background-color: var(--warning-yellow); }
+.bg-green-light { background-color: var(--success-mint); }
+.bg-purple-light { background-color: #f3e8ff; }
+
+/* --- Formularios Internos (Crear Estudiante, etc.) --- */
+.form-card {
+    background-color: var(--card-white);
+    border-radius: var(--border-radius-card);
+    padding: 35px 40px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: var(--accent-blue);
+    margin-bottom: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Grilla responsive de 2 columnas */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 10px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Extensión de estilos para selects y textareas */
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-btn);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-blue);
+    background-color: var(--card-white);
+    box-shadow: 0 0 0 3px rgba(38, 47, 87, 0.1);
+}
+
+/* Inputs con prefijo (Ej: $ para pagos) */
+.input-prefix {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-btn);
+    background-color: #fafafa;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.input-prefix:focus-within {
+    border-color: var(--accent-blue);
+    background-color: var(--card-white);
+    box-shadow: 0 0 0 3px rgba(38, 47, 87, 0.1);
+}
+
+.input-prefix span {
+    padding: 12px 16px;
+    background-color: #f3f4f6;
+    color: var(--text-muted);
+    font-weight: 500;
+    border-right: 1px solid var(--border-light);
+}
+
+.input-prefix input {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    flex-grow: 1;
+}
+
+.input-prefix input:focus {
+    box-shadow: none; /* Sobrescribimos el focus por defecto */
+}
+
+.disabled-prefix {
+    background-color: var(--border-light);
+    opacity: 0.6;
+}
+
+.disabled-prefix input {
+    cursor: not-allowed;
+}
+
+/* Separadores visuales */
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 40px 0;
+}
+
+/* Botones de Acción (Formulario) */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-dark);
+    padding: 12px 20px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-btn);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-ice-blue);
+    border-color: #d1d5db;
+}
+
+/* Ajuste para que el btn-primary del form no se estire */
+.form-actions .btn-primary {
+    width: auto;
+    margin-top: 0;
+}
+
+/* --- Búsqueda (Registrar Documentación / Pagos) --- */
+.search-section {
+    padding: 25px 40px;
+    margin-bottom: 24px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #fafafa;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-btn);
+    padding: 6px 6px 6px 16px;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.search-input-wrapper:focus-within {
+    border-color: var(--accent-blue);
+    background-color: var(--card-white);
+    box-shadow: 0 0 0 3px rgba(38, 47, 87, 0.1);
+}
+
+.search-icon {
+    color: var(--text-muted);
+    margin-right: 12px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    flex-grow: 1;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    outline: none;
+    color: var(--text-dark);
+}
+
+.btn-search {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+/* --- Ficha de Estudiante (Cabecera) --- */
+.ficha-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-name {
+    font-size: 1.4rem;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.badge-programa {
+    display: inline-block;
+    background-color: var(--bg-ice-blue);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid var(--border-light);
+}
+
+.progress-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9rem;
+}
+
+/* --- Checkboxes Tipo SaaS --- */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.custom-checkbox-card {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-btn);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+    user-select: none;
+}
+
+.custom-checkbox-card:hover {
+    background-color: var(--card-white);
+    border-color: #d1d5db;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Ocultar checkbox real */
+.custom-checkbox-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Cuadro visual nativo (reemplazo) */
+.checkbox-box {
+    height: 22px;
+    width: 22px;
+    background-color: var(--card-white);
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Estado Checkeado - Diseño del Cuadro */
+.custom-checkbox-card input[type="checkbox"]:checked ~ .checkbox-box {
+    background-color: var(--success-mint);
+    border-color: var(--success-text);
+}
+
+/* Icono de Visto (Check) usando CSS puro */
+.custom-checkbox-card input[type="checkbox"]:checked ~ .checkbox-box::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid var(--success-text);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
+.custom-checkbox-card input[type="checkbox"]:checked ~ .checkbox-label {
+    color: var(--success-text);
+    font-weight: 600;
+}
+
+/* Highlight de la tarjeta completa al estar checkeado (Navegadores Modernos) */
+.custom-checkbox-card:has(input[type="checkbox"]:checked) {
+    border-color: var(--success-text);
+    background-color: var(--card-white);
+    box-shadow: 0 0 0 1px var(--success-mint);
+}
+
+.checkbox-label {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+/* --- Subida de Archivos (Drag & Drop Visual) --- */
+.file-upload-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    border: 2px dashed var(--border-light);
+    border-radius: var(--border-radius-card);
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.file-upload-wrapper:hover,
+.file-upload-wrapper:focus-within {
+    border-color: var(--accent-blue);
+    background-color: var(--card-white);
+}
+
+.file-upload-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    background-color: #e0e7ff; /* bg-blue-light */
+}
+
+.file-upload-text {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+/* Ocultamos el input nativo pero lo expandimos al 100% de la caja */
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Foco para accesibilidad (navegación por teclado) */
+.file-upload-input:focus + .file-upload-wrapper {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* --- Filtros (Visualizar Listas) --- */
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    align-items: end;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.form-actions-inline {
+    margin-top: 0;
+}
+
+/* --- Lista de Estudiantes (Layout SaaS) --- */
+.students-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-white);
+    padding: 24px 30px; /* Mucho padding interno para sensación de amplitud */
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.list-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+    border-color: var(--border-light);
+}
+
+.row-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Avatar Circular */
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.student-name-list {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Etiquetas Pastel */
+.badges-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.badge-status {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.text-warning { color: var(--warning-text); }
+.text-success { color: var(--success-text); }
+
+/* Botones de Acción de la Fila */
+.row-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--border-radius-btn);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-light);
+    background-color: #fafafa;
+    color: var(--text-dark);
+}
+
+.btn-action:hover {
+    background-color: var(--card-white);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn-view {
+    background-color: var(--bg-ice-blue);
+    border-color: transparent;
+    color: var(--accent-blue);
+}
+
+.btn-view:hover {
+    background-color: var(--accent-blue);
+    color: var(--card-white);
+}
+
+.btn-edit {
+    padding: 10px; /* Diseño más cuadrado para alojar solo el icono */
+}
+
+/* --- Dashboard Estudiante (Gráficos y Paneles) --- */
+
+/* Grilla de Gráficos */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Envoltura para mantener el gráfico de pastel cuadrado y responsivo */
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    aspect-ratio: 1; /* Mantiene la proporción 1:1 */
+}
+
+/* Tarjetas interactivas (Efectos de clic) */
+.interactive-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.interactive-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-blue);
+}
+
+/* Paneles Ocultos y Animaciones */
+.hidden-panel {
+    display: none; /* Oculto por defecto */
+    margin-bottom: 24px;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Clase que añadiremos con JavaScript para mostrarlos */
+.visible-panel {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Panel de Edición con borde destacado */
+.border-accent {
+    border: 2px solid var(--accent-blue);
+}
+
+/* Listas de Historial (Fichas de Documentos y Pagos) */
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.history-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.history-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Utilidades adicionales de margen y texto */
+.mb-40 { margin-bottom: 40px; }
+.mt-5 { margin-top: 5px; }
+.mt-15 { margin-top: 15px; }
+.ml-10 { margin-left: 10px; }
+.font-bold { font-weight: 700; }
+
+/* ==========================================================
+   BLOQUES COMPARTIDOS DEL REFACTOR
+   Estilos que antes se repetían dentro de cada página.
+   ========================================================== */
+
+/* Estructura fija: el sidebar no se mueve, el scroll vive en el contenido */
+.dashboard-body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.sidebar {
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+.main-content {
+    height: 100vh;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Avisos de éxito y error (flash y locales) */
+.aviso {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.aviso-exito { background-color: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
+.aviso-error { background-color: #fee2e2; color: #b91c1c; border-left: 4px solid #ef4444; }
+
+/* Chips de estado de documentos y pagos */
+.estado-chip {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.estado-aprobado { background: #d1fae5; color: #059669; }
+.estado-pendiente { background: #fef3c7; color: #d97706; }
+.estado-negado { background: #fee2e2; color: #dc2626; }
+.estado-nosubido { background: #f1f5f9; color: #64748b; }
+
+/* Pestañas de filtro por estado (bandejas de revisión) */
+.filter-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.filter-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-muted);
+    background-color: var(--card-white);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+.filter-tab.tab-ambar:hover  { border-color: #f59e0b; color: #d97706; background-color: #fef3c7; }
+.filter-tab.tab-verde:hover  { border-color: #10b981; color: #047857; background-color: #d1fae5; }
+.filter-tab.tab-rojo:hover   { border-color: #ef4444; color: #b91c1c; background-color: #fee2e2; }
+.filter-tab.tab-morado:hover { border-color: #8b5cf6; color: #6d28d9; background-color: #ede9fe; }
+.filter-tab.tab-ambar.active  { background-color: #f59e0b; color: white; border-color: #f59e0b; }
+.filter-tab.tab-verde.active  { background-color: #10b981; color: white; border-color: #10b981; }
+.filter-tab.tab-rojo.active   { background-color: #ef4444; color: white; border-color: #ef4444; }
+.filter-tab.tab-morado.active { background-color: #8b5cf6; color: white; border-color: #8b5cf6; }
+
+/* Formulario desplegable de rechazo con motivo (documentos y pagos) */
+.rechazo-form-container {
+    display: none;
+    background-color: #fef2f2;
+    padding: 15px 20px;
+    border-top: 1px solid #fecaca;
+    width: 100%;
+}
+.rechazo-form-container.active { display: block; }
+.rechazo-form-container textarea {
+    width: 100%;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+/* Buscador de una línea (texto + botón) */
+.search-box-custom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+/* Estado vacío antes de aplicar filtros */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    text-align: center;
+    background-color: var(--card-white);
+    border-radius: 12px;
+    border: 1px dashed #cbd5e1;
+}
