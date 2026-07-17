@@ -62,6 +62,18 @@ class PagoRepository extends RepositorioBase
         return (float) ($stmt->fetchColumn() ?: 0);
     }
 
+    // Fecha del último pago registrado (los rechazados no cuentan como pago).
+    // Devuelve null si el estudiante nunca ha registrado un pago válido.
+    public function fechaUltimoPago(int $estudianteId): ?string
+    {
+        $stmt = $this->pdo->prepare(
+            "SELECT MAX(fecha_pago) FROM pagos WHERE estudiante_id = :id AND estado != 'Rechazado'"
+        );
+        $stmt->execute([':id' => $estudianteId]);
+        $fecha = $stmt->fetchColumn();
+        return $fecha ?: null;
+    }
+
     public function tienePendientes(int $estudianteId): bool
     {
         $stmt = $this->pdo->prepare(

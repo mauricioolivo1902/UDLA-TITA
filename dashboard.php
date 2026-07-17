@@ -46,6 +46,14 @@ exigir_rol('admisiones');
                 <p class="text-muted">Búsqueda avanzada, ver estados y dashboard por estudiante.</p>
             </a>
 
+            <a href="mora.php" class="module-card">
+                <div class="icon-wrapper" style="background-color: #fee2e2;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3>Mora</h3>
+                <p class="text-muted">Estudiantes con deuda y sin pagos registrados en el último mes.</p>
+            </a>
+
             <a href="exportar_listas.php" class="module-card">
                 <div class="icon-wrapper bg-blue-light">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262f57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>

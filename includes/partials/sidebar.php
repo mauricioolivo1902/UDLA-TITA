@@ -14,6 +14,7 @@ $menus_por_rol = [
         'crear_estudiante.php'    => 'Crear Estudiante',
         'revisar_documentos.php'  => 'Revisar Documentos',
         'visualizar_listas.php'   => 'Visualizar Listas',
+        'mora.php'                => 'Mora',
         'exportar_listas.php'     => 'Exportar Listas',
     ],
     'contabilidad' => [
